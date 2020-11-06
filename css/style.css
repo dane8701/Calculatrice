@@ -1,41 +1,59 @@
 *, *::after, *::before{
     box-sizing: content-box;
 }
+
 html,body{  
     margin:0;
     padding:0;
     width: 100%;
     height: 100%;
 }
+
 .calculatrice{
     border: 1px solid #16697A;
-    width: calc( 100% - 2px);
-    height: calc( 100% - 2px);
+    width: calc( 100%);
+    height: calc( 100%);
     background-color: #161616;
     display: flex;
     flex-direction: column;
 }
-.calculatrice .ecran{
-border:1px solid #EDE7E3;
-width: 100%;
-height:150px;
+
+.calculatrice .ecran .operation{
+    border:1px solid #EDE7E3;
+    width: 100%;
+    height:75px;
+    color : white;
+    font-size: 50px;
 }
+
+.calculatrice .ecran .resultat{
+    width: 100%;
+    height: 50px;
+    background-color: rgb(104, 104, 104);
+    color : white;
+    font-size: 50px;
+    display : flex;
+}
+
 .calculatrice .buttons{
     width: 100%;
     height: 100%;
     display: flex;
     flex-direction: column;
 }
+
 .calculatrice .buttons .function{
-width: 359px;
-height: 100px;
-display: flex;
-font-size: 20px;
-background-color: #1c558e;
+    width: 100%;
+    height: 85px;
+    display: flex;
+    font-size: 20px;
+    background-color:white;
 }
-.calculatrice .buttons .function .button{
-box-shadow: 5px 3px 2px #16697A;
-}
+
+/*.calculatrice .buttons .function .button{
+    box-shadow: 5px 3px 2px #16697A;
+}*/
+
 .calculatrice .buttons .pavé_Numérique{
     width: 100%;
     height: 100%;
@@ -44,36 +62,48 @@ box-shadow: 5px 3px 2px #16697A;
     color: black;
     font-size: 30px;
 }
+
 .calculatrice .buttons .pavé_Numérique .number{
     width: 216px;
     height: 288px;
     display: block;
     float: center;
-    background-color: #52796f;
+    background-color:white;
 }
+
 .calculatrice .buttons .pavé_Numérique .sign{
     width: 72px;
     height: 288px;
     display: inline-block;
-    background-color: #84a98c;
+    background-color:white;
+}
+
+.calculatrice .buttons .pavé_Numérique .funct{
+    width: 72px;
+    height: 288px;
+    display: inline-block;
+    background-color: white;
+    font-size: 15px;
 }
 
 .button{
     width: 40px;
     height: 40px;
     border-radius:20px;
-    background-color: white;
+    background-color: rgb(204, 60, 60);
     margin: 16px;
     float: left;
     display: flex;
     justify-content: center;
     align-items: center;
-    box-shadow: 5px 3px 2px #ffa62b;
+    box-shadow: 10px 10px 5px black;
 }
+
 .calculatrice .buttons .function .button{
-        font-size: 30px;
-        margin: 16px;
+    font-size: 30px;
+    margin: 16px;
 }
+
 input#number{
     text-align: right;
     background-color: darkgray;
