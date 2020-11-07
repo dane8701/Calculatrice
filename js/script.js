@@ -30,12 +30,53 @@ window.onload = function () {
 }
 
 document.addEventListener('keydown', (e) => { //controle des touches du clavier
-    const valeur = e.key;
     //calculer(valeur)
     console.log(e.key)
-    if (e.key > 95 && e.key < 106) {
-        operation.innerHTML += e.key
-        console.log(operation.innerHTML);
+    if (e.keyCode > 95 && e.keyCode < 106) {
+        operation.innerHTML += e.key;
+    }
+    if (e.keyCode == 110) {
+        operation.innerHTML += e.key;
+    }
+    if (e.keyCode == 107) {
+        operation.innerHTML += e.key;
+        ajouteOperation('+');
+    }
+    if (e.keyCode == 109) {
+        operation.innerHTML += e.key;
+        ajouteOperation('-');
+    }
+    if (e.keyCode == 106) {
+        operation.innerHTML += e.key;
+        ajouteOperation('*');
+    }
+    if (e.keyCode == 111) {
+        operation.innerHTML += e.key;
+        ajouteOperation('/');
+    }
+    if (e.keyCode == 13) {
+        operation.innerHTML += e.key;
+        input2 = numerique(operation.innerHTML);
+        resetNombre();
+        afficheOperation();
+        calculer();
+        let valeur_operation = operation.innerHTML;
+        numerique(valeur_operation);
+        console.log(resultatFinal);
+        resultat.innerHTML = resultatFinal;
+        afficheOperation();
+
+    }
+    if (e.keyCode == 27) {
+        operation.innerHTML += e.key;
+        resetNombre();
+    }
+    if (e.keyCode == 192) {
+        operation.innerHTML += e.key;
+        ajouteOperation('%');
+    }
+    if (e.keyCode == 8) {
+        supprimerChiffre();
     }
 })
 
@@ -46,6 +87,30 @@ touches.forEach(element => {
 function ajouteChiffre(val) {
     operation.innerHTML += val;
     console.log(operation.innerHTML);
+}
+
+function supprimerChiffre() {
+    let e = '';
+    console.log(operation.innerHTML.length);
+    if (operation.innerHTML.length > 14)
+    {
+        for (let i = 14; i < operation.innerHTML.length - 1; i++)
+        {
+            console.log(operation.innerHTML[i]);
+            e += operation.innerHTML [i];
+        }
+        operation.innerHTML = e ;
+        console.log(operation.innerHTML);
+    }
+    else
+    {
+        for (let i = 0; i < operation.innerHTML.length - 1; i++) {
+            console.log(operation.innerHTML[i]);
+            e += operation.innerHTML[i];
+        }
+        operation.innerHTML = e;
+        console.log(operation.innerHTML);
+    }
 }
 
 function ajouteDecimal(val){
